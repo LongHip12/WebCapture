@@ -1,5 +1,6 @@
 const dns = require("node:dns").promises;
 const net = require("node:net");
+process.env.PLAYWRIGHT_BROWSERS_PATH ||= "0";
 const express = require("express");
 const cors = require("cors");
 const { chromium } = require("playwright");

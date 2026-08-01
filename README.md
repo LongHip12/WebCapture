@@ -11,6 +11,16 @@ node server.js
 
 Server chạy tại `http://localhost:8080`.
 
+## Deploy trên Render
+
+Tạo một Web Service với:
+
+- **Build Command:** `npm install`
+- **Start Command:** `node server.js`
+- **Environment:** Node
+
+Project tự cài Chromium vào `node_modules` trong lúc build, nên không cần thêm lệnh cài browser riêng trên Render.
+
 Nếu chạy trên Linux ngoài Replit và gặp lỗi Chromium thiếu thư viện hệ thống, chạy thêm:
 
 ```bash
