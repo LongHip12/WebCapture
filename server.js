@@ -74,7 +74,10 @@ function requestBody(body) {
 }
 
 function browser() {
-  browserPromise ||= chromium.launch({ headless: true });
+  browserPromise ||= chromium.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   return browserPromise;
 }
 
@@ -141,8 +144,12 @@ app.post("/api/preview", async (request, response) => {
       response.status(error.status).json({ error: error.message });
       return;
     }
-    console.error(error);
-    response.status(502).json({ error: "Unable to render preview" });
+    const detail = error instanceof Error ? error.message : String(error);
+    console.error(detail);
+    response.status(502).json({
+      error: "Unable to render preview",
+      detail,
+    });
   }
 });
 

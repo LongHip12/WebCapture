@@ -11,6 +11,12 @@ node server.js
 
 Server chạy tại `http://localhost:8080`.
 
+Nếu chạy trên Linux ngoài Replit và gặp lỗi Chromium thiếu thư viện hệ thống, chạy thêm:
+
+```bash
+npx playwright install --with-deps chromium
+```
+
 ## API
 
 ```bash
