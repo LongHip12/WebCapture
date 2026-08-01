@@ -1,19 +1,16 @@
 {
-  "name": "preview-api",
-  "version": "1.0.0",
-  "description": "Web preview API with screenshot",
-  "main": "server.js",
-  "type": "module",
+  "name": "webcapture",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "start": "node server.js",
+    "postinstall": "playwright install chromium",
     "dev": "node server.js"
   },
-  "engines": {
-    "node": "18.x"
-  },
+  "private": true,
   "dependencies": {
-    "express": "^4.18.2",
-    "puppeteer": "^21.6.1",
-    "cors": "^2.8.5"
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "playwright": "^1.62.1"
   }
 }
